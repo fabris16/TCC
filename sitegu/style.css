@@ -56,3 +56,13 @@ button:hover {
   font-weight: bold;
   color: #a06cf2;
 }
+
+.imagem1.container-imagens {
+  display: flex;       /* Alinha os itens em linha por padrão */
+  gap: 16px;           /* Cria um espaço de 16px entre as imagens */
+}
+
+.container-imagens img {
+  max-width: 300px;     /* Ou use porcentagem, ex: width: 48%; */
+  height: auto;        /* Mantém a proporção da imagem */
+}
