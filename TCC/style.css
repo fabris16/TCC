@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Header */
+header {
+    background-color: #fde8e9;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-container h1 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+.logo-container p {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555555;
+    margin-top: 1px;
+}
+
+.language-select {
+    font-size: 14px;
+    color: #000000;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2.5px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 1px;
+}
+
+/* Hero Image Area */
+.hero-banner {
+    width: 100%;
+    height: 260px;
+    background: url('imagens/Pizza.png') center/cover no-repeat;
+}
+
+/* Main Content (Layout Lado a Lado da nova imagem) */
+.intro-section {
+    display: flex;
+    align-items: center;
+    padding: 30px 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.map-container {
+    flex: 1.2;
+}
+
+.italy-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-container {
+    flex: 2;
+}
+
+.intro-text {
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #222222;
+    text-align: left;
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: #2c2c2c;
+    padding: 25px 15px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Footer / Info Section */
+footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    padding: 15px 20px 40px 20px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border-top: 1px solid #3a3a3a;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.branch-info h3 {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.branch-info p {
+    margin-bottom: 4px;
+    color: #b5b5b5;
+    line-height: 1.4;
+}
+
+.branch-info .hours {
+    margin-top: 15px;
+    color: #b5b5b5;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+/* Ajuste Responsivo para Telas Maiores */
+@media (min-width: 600px) {
+    .intro-section, .gallery-grid, .footer-grid {
+        max-width: 600px;
+    }
+    .gallery-item {
+        height: 260px;
+    }
+}

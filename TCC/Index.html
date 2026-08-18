@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luigia - Cucina Italiana</title>
+    <!-- Vinculando o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-container">
+            <h1>LUIGIA</h1>
+            <p>Cascavel e Foz do Iguaçu</p>
+        </div>
+        <div class="language-select">Italiano</div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Banner Principal (Pizza.png via CSS) -->
+    <div class="hero-banner"></div>
+
+    <!-- Seção de Introdução (Mapa ao lado do Texto) -->
+    <section class="intro-section">
+        <div class="map-container">
+            <!-- Placeholder para o mapa da Itália (Substitua por imagens/Mapa.png se preferir) -->
+            <svg class="italy-map" viewBox="0 0 100 120" xmlns="http://w3.org">
+                <path d="M30,20 Q40,10 50,25 T70,40 T60,70 T40,90 Z" fill="none" stroke="#222" stroke-width="1.5"/>
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="10" fill="#333">Italia</text>
+            </svg>
+        </div>
+        <div class="text-container">
+            <p class="intro-text">
+                Proprio come voi, nutriamo una grande passione per la cucina italiana. 
+                Da Luigia uniamo ingredienti selezionati, ricette che ispirano e ospitalità.
+            </p>
+        </div>
+    </section>
+
+    <!-- Galeria de Imagens (Com margens laterais como na nova imagem) -->
+    <section class="gallery-section">
+        <div class="gallery-grid">
+            <img class="gallery-item" src="imagens/Bebida.png" alt="Bebida Luigia">
+            <img class="gallery-item" src="imagens/Pizza2.png" alt="Pizza Luigia">
+        </div>
+    </section>
+
+    <!-- Rodapé com Informações das Unidades em Italiano -->
+    <footer>
+        <div class="footer-grid">
+            <!-- Unidade Cascavel -->
+            <div class="branch-info">
+                <h3>Cascavel</h3>
+                <p>R. Vicente Machado, 1028 - CENTRO</p>
+                <p>(45) 99933-8077</p>
+                <p class="hours">Dal martedì alla domenica<br>18:00 - 23:00</p>
+            </div>
+
+            <!-- Unidade Foz do Iguaçu -->
+            <div class="branch-info">
+                <h3>Foz do Iguaçu</h3>
+                <p>Av. Paraná, 960 - CENTRO</p>
+                <p>(45) 98422-3212</p>
+                <p class="hours">Tutti i giorni<br>18:00 - 23:00</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
