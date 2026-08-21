@@ -76,14 +76,53 @@ header {
     gap: 15px;
 }
 
-.map-container {
-    flex: 1.2;
+/* Contêiner principal que junta a imagem e o texto */
+.italy-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaço entre o mapa e o texto */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.italy-map {
+/* Ajuste específico para o contêiner do mapa */
+.map-container {
+    flex: 0 0 120px; /* Define uma largura fixa padrão para o mapa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Garante que a imagem preencha o contêiner sem distorcer */
+.map-container img {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
+}
+
+/* Estilização do texto ao lado */
+.text-container {
+    flex: 1;
+    font-family: 'Cinzel', serif, sans-serif; /* Fonte elegante similar à do site */
+    font-size: 1rem;
+    line-height: 1.5;
+    text-transform: uppercase; /* Deixa o texto em caixa alta como na imagem */
+    color: #1a1a1a;
+}
+
+/* Ajuste para telas menores (celulares) */
+@media (max-width: 800px) {
+    .italy-section {
+        flex-direction: row; /* Mantém lado a lado ou mude para 'column' se preferir empilhar */
+        gap: 15px;
+    }
+    
+    .map-container {
+        flex: 0 0 80px; /* Diminui o mapa em telas pequenas */
+    }
 }
 
 .text-container {
