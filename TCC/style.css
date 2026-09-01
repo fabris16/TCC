@@ -10,18 +10,20 @@ body {
     color: #333333;
 }
 
-/* Header */
+/* ===== Header ===== */
 header {
     background-color: #fde8e9;
     padding: 12px 15px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e0e0e0;
+    gap: 10px;
 }
 
 .logo-container h1 {
-    font-size: 24px;
+    font-size: clamp(18px, 4vw, 24px);
     font-weight: 300;
     letter-spacing: 2px;
     color: #000000;
@@ -49,6 +51,7 @@ header {
     width: 22px;
     height: 15px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .menu-toggle span {
@@ -59,16 +62,17 @@ header {
     border-radius: 1px;
 }
 
-/* Hero Image Area */
+/* ===== Hero Image Area ===== */
 .hero-banner {
     width: 100%;
     height: 260px;
     background: url('imagens/Pizza.png') center/cover no-repeat;
 }
 
-/* Main Content (Layout Lado a Lado da nova imagem) */
+/* ===== Intro Section ===== */
 .intro-section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding: 30px 15px;
     max-width: 500px;
@@ -76,26 +80,24 @@ header {
     gap: 15px;
 }
 
-/* Contêiner principal que junta a imagem e o texto */
+/* ===== Italy Section (mapa + texto) ===== */
 .italy-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Espaço entre o mapa e o texto */
+    gap: 20px;
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Ajuste específico para o contêiner do mapa */
 .map-container {
-    flex: 0 0 120px; /* Define uma largura fixa padrão para o mapa */
+    flex: 0 0 120px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Garante que a imagem preencha o contêiner sem distorcer */
 .map-container img {
     width: 100%;
     height: auto;
@@ -103,30 +105,13 @@ header {
     object-fit: contain;
 }
 
-/* Estilização do texto ao lado */
-.text-container {
-    flex: 1;
-    font-family: 'Cinzel', serif, sans-serif; /* Fonte elegante similar à do site */
-    font-size: 1rem;
-    line-height: 1.5;
-    text-transform: uppercase; /* Deixa o texto em caixa alta como na imagem */
-    color: #1a1a1a;
-}
-
-/* Ajuste para telas menores (celulares) */
-@media (max-width: 800px) {
-    .italy-section {
-        flex-direction: row; /* Mantém lado a lado ou mude para 'column' se preferir empilhar */
-        gap: 15px;
-    }
-    
-    .map-container {
-        flex: 0 0 80px; /* Diminui o mapa em telas pequenas */
-    }
-}
-
 .text-container {
     flex: 2;
+    font-family: 'Cinzel', serif, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #1a1a1a;
 }
 
 .intro-text {
@@ -138,7 +123,7 @@ header {
     text-align: left;
 }
 
-/* Gallery Section */
+/* ===== Gallery Section ===== */
 .gallery-section {
     background-color: #2c2c2c;
     padding: 25px 15px;
@@ -146,7 +131,7 @@ header {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     max-width: 500px;
     margin: 0 auto;
@@ -159,7 +144,7 @@ header {
     border-radius: 2px;
 }
 
-/* Footer / Info Section */
+/* ===== Footer ===== */
 footer {
     background-color: #2c2c2c;
     color: #ffffff;
@@ -171,7 +156,7 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 500px;
     margin: 0 auto;
@@ -199,12 +184,118 @@ footer {
     font-size: 10px;
 }
 
-/* Ajuste Responsivo para Telas Maiores */
+/* =========================================================
+   MEDIA QUERIES — mobile primeiro, telas maiores depois
+   ========================================================= */
+
+/* Celulares bem pequenos (<400px): empilha mapa + texto */
+@media (max-width: 400px) {
+    .italy-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .map-container {
+        flex: 0 0 auto;
+        width: 100px;
+    }
+
+    .language-select {
+        font-size: 12px;
+        margin-right: 8px;
+    }
+}
+
+/* Telas pequenas/médias (até 800px), já existia no seu código */
+@media (max-width: 800px) {
+    .italy-section {
+        gap: 15px;
+    }
+
+    .map-container {
+        flex: 0 0 80px;
+    }
+}
+
+/* Tablets (600px+) */
 @media (min-width: 600px) {
-    .intro-section, .gallery-grid, .footer-grid {
+    .intro-section,
+    .gallery-grid,
+    .footer-grid {
         max-width: 600px;
     }
+
     .gallery-item {
         height: 260px;
+    }
+
+    .hero-banner {
+        height: 320px;
+    }
+}
+
+/* Tablets grandes / notebooks pequenos (768px+) */
+@media (min-width: 768px) {
+    header {
+        padding: 16px 40px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+
+    .italy-section {
+        max-width: 900px;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    header {
+        padding: 20px 60px;
+    }
+
+    .hero-banner {
+        height: 420px;
+    }
+
+    .intro-section {
+        max-width: 900px;
+        padding: 50px 15px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1100px;
+        gap: 20px;
+    }
+
+    .gallery-item {
+        height: 280px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1100px;
+    }
+
+    .italy-section {
+        max-width: 1100px;
+    }
+}
+
+/* Telas muito grandes (1440px+) */
+@media (min-width: 1440px) {
+    .gallery-grid,
+    .footer-grid,
+    .italy-section,
+    .intro-section {
+        max-width: 1300px;
     }
 }
