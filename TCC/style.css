@@ -69,22 +69,26 @@ header {
     background: url('imagens/Pizza.png') center/cover no-repeat;
 }
 
-/* ===== Intro Section (wrapper geral, centraliza tudo na página) ===== */
+/* ===== Intro Section ===== */
 .intro-section {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
     padding: 30px 15px;
-    max-width: 900px;
+    max-width: 500px;
     margin: 0 auto;
+    gap: 15px;
 }
 
-/* ===== Italy Section (mapa + texto lado a lado) ===== */
+/* ===== Italy Section (mapa + texto) ===== */
 .italy-section {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .map-container {
@@ -103,10 +107,14 @@ header {
 
 .text-container {
     flex: 2;
+    font-family: 'Cinzel', serif, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #1a1a1a;
 }
 
 .intro-text {
-    font-family: 'Cinzel', serif, sans-serif;
     font-size: 11px;
     line-height: 1.6;
     letter-spacing: 0.5px;
@@ -198,7 +206,7 @@ footer {
     }
 }
 
-/* Telas pequenas/médias (até 800px) */
+/* Telas pequenas/médias (até 800px), já existia no seu código */
 @media (max-width: 800px) {
     .italy-section {
         gap: 15px;
@@ -211,6 +219,7 @@ footer {
 
 /* Tablets (600px+) */
 @media (min-width: 600px) {
+    .intro-section,
     .gallery-grid,
     .footer-grid {
         max-width: 600px;
@@ -240,6 +249,10 @@ footer {
         grid-template-columns: repeat(3, 1fr);
         max-width: 900px;
     }
+
+    .italy-section {
+        max-width: 900px;
+    }
 }
 
 /* Desktop (1024px+) */
@@ -253,7 +266,7 @@ footer {
     }
 
     .intro-section {
-        max-width: 1100px;
+        max-width: 900px;
         padding: 50px 15px;
     }
 
@@ -271,13 +284,19 @@ footer {
         grid-template-columns: repeat(4, 1fr);
         max-width: 1100px;
     }
+
+    .italy-section {
+        max-width: 1100px;
+    }
 }
 
 /* Telas muito grandes (1440px+) */
 @media (min-width: 1440px) {
     .gallery-grid,
     .footer-grid,
+    .italy-section,
     .intro-section {
         max-width: 1300px;
     }
 }
+
